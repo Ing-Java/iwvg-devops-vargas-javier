@@ -3,8 +3,13 @@ branches:
   - only
     - develop
       - /^release-[0-999].[0-999]$/
+      -master
 notifications:
   email:
     recipients:
     -jl.vpaez@alumnos.upm.e
+script:
+  -mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
 
+  #SONARCLOUD
+  - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=ing-java -Dsonar.login=$SONAR

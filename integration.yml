@@ -1,0 +1,10 @@
+language: Java
+branches:
+  - only
+    - develop
+      - /^release-[0-999].[0-999]$/
+notifications:
+  email:
+    recipients:
+    -jl.vpaez@alumnos.upm.e
+
